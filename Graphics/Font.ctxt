@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=msg\ screen\ x\ y\ color\ scale
+comment0.target=void\ render(java.lang.String,\ Screen,\ int,\ int,\ int,\ int)
+numComments=1

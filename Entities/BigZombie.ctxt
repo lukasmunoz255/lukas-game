@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=level\ x\ y\ mainPlayer\ worldNumber
+comment0.target=BigZombie(Game.Level,\ int,\ int,\ Player,\ int)
+comment1.params=
+comment1.target=void\ increaseKills()
+comment2.params=
+comment2.target=int\ getXTile()
+comment3.params=
+comment3.target=int\ getYTile()
+comment4.params=screen\ g
+comment4.target=void\ render(Graphics.Screen,\ java.awt.Graphics)
+numComments=5

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=level\ name\ x\ y\ speed
+comment0.target=Mob(Game.Level,\ java.lang.String,\ int,\ int,\ int)
+comment1.params=
+comment1.target=boolean\ isAlive()
+comment2.params=xa\ ya\ x\ y
+comment2.target=boolean\ isSolidTile(int,\ int,\ int,\ int)
+comment2.text=\r\n\ \ \ \ protected\ boolean\ isBullet(int\ x,\ int\ y)\r\n\ \ \ \ 3693\r\n\r\n\ \ \ \ {\r\n\ \ \ \ for(int\ xa\ \=\ x;\ xa\ <\ x+4;\ xa++)\r\n\ \ \ \ {\r\n\ \ \ \ for(int\ ya\ \=\ y;\ y\ <\ y+4;\ y++)\r\n\ \ \ \ {\r\n\ \ \ \ if(level.isBullet(xa,\ ya))\r\n\ \ \ \ return\ true;\r\n\ \ \ \ }\r\n\ \ \ \ }\r\n\ \ \ \ return\ false;\r\n\ \ \ \ }\r\n
+comment3.params=
+comment3.target=java.lang.String\ getName()
+numComments=4

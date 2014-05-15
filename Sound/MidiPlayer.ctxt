@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MidiPlayer()
+comment1.params=soundClip
+comment1.target=void\ assertValid(SoundFile)
+comment2.params=soundClip
+comment2.target=void\ playOnRepeat(SoundFile)
+comment3.params=soundClip
+comment3.target=void\ play(SoundFile)
+comment4.params=
+comment4.target=void\ stop()
+numComments=5

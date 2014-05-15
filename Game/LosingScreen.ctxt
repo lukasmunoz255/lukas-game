@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=gameScreen\ game\ screen\ input\ soundPlayer
+comment0.target=LosingScreen(GameScreen,\ Game,\ Graphics.Screen,\ InputHandler,\ Sound.WavePlayer)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ LosingScreen\r\n
+comment1.params=
+comment1.target=java.lang.String\ getName()
+comment2.params=difficulty\ worldNumber\ victory
+comment2.target=void\ initialize(int,\ int,\ boolean)
+comment3.params=screen\ g
+comment3.target=void\ renderEntities(Graphics.Screen,\ java.awt.Graphics)
+comment4.params=screen
+comment4.target=void\ renderHighScoreStuff(Graphics.Screen)
+comment5.params=keyCode
+comment5.target=void\ getLetter(int)
+comment6.params=input
+comment6.target=void\ clicked(InputHandler)
+numComments=7

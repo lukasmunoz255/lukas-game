@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=x\ y
+comment0.target=SpawnPoint(int,\ int)
+comment1.params=zombies\ entities\ level\ screen\ player\ zombie\ worldNumber
+comment1.target=void\ spawn(java.util.ArrayList,\ java.util.List,\ Level,\ Graphics.Screen,\ Entities.Player,\ int,\ int)
+comment2.params=
+comment2.target=boolean\ isFull()
+comment3.params=
+comment3.target=void\ reset()
+numComments=4

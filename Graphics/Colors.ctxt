@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=color1\ color2\ color3\ color4
+comment0.target=int\ get(int,\ int,\ int,\ int)
+comment0.text=\r\n\ On\ our\ spritesheet,\ you\ ill\ notice\ that\ there\ are\ only\ four\ colors\ used\ and\r\n\ all\ of\ them\ are\ different\ shades\ of\ black\ and\ white.\ color1\ is\ black,\ color2\ is\r\n\ dark\ gray,\ color3\ is\ light\ gray,\ and\ color4\ is\ white.\ \r\n
+comment1.params=color
+comment1.target=int\ get(int)
+comment1.text=\r\n\ Returns\ a\ simplified\ version\ of\ a\ color.\ A\ call\ to\ Colors.get(351)\ would\ return\ a\ color\ \r\n\ with\ 3\ parts\ red,\ 5\ parts\ green,\ and\ 1\ part\ blue.\ All\ of\ the\ shades\ are\ scaled\ up\ as\ well\r\n\ to\ only\ allow\ for\ 6\ shades\ of\ each.\ For\ example\ a\ call\ to\ Colors.get(958)\ would\ be\ the\ same\ \r\n\ as\ Colors.get(555).\r\n
+comment2.params=
+comment2.target=int\ getRandom()
+comment3.params=index
+comment3.target=int\ getRandomColor(int)
+numComments=4

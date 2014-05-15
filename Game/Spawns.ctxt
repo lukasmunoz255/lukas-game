@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=level
+comment0.target=Spawns(Level)
+comment1.params=zombies\ entities\ level\ screen\ player\ difficulty\ worldNumber
+comment1.target=void\ initializeEnemies(java.util.ArrayList,\ java.util.List,\ Level,\ Graphics.Screen,\ Entities.Player,\ int,\ int)
+comment2.params=
+comment2.target=void\ resetSpawns()
+numComments=3

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Timer()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Timer\r\n
+comment1.params=
+comment1.target=boolean\ isRunning()
+comment2.params=
+comment2.target=void\ start()
+comment3.params=
+comment3.target=void\ stop()
+comment4.params=
+comment4.target=long\ getTime()
+numComments=5

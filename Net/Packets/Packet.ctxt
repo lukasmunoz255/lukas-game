@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=packetId
+comment0.target=Packet(int)
+comment1.params=client
+comment1.target=void\ writeData(Net.GameClient)
+comment2.params=server
+comment2.target=void\ writeData(GameServer)
+comment3.params=
+comment3.target=byte[]\ getData()
+comment4.params=data
+comment4.target=java.lang.String\ readData(byte[])
+comment5.params=id
+comment5.target=Packet.PacketTypes\ lookupPacket(int)
+comment6.params=packetId
+comment6.target=Packet.PacketTypes\ lookupPacket(java.lang.String)
+numComments=7

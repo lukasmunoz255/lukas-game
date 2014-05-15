@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=level\ x\ y\ screen
+comment0.target=ComputerPlayer(Game.Level,\ int,\ int,\ Graphics.Screen)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ ComputerPlayer\r\n
+comment1.params=zomb
+comment1.target=void\ setZombie(Zombie)
+comment2.params=
+comment2.target=int\ getGunSpeed()
+comment3.params=
+comment3.target=void\ healthTick()
+comment4.params=
+comment4.target=void\ moveTick()
+comment5.params=
+comment5.target=void\ top()
+comment6.params=
+comment6.target=void\ bottom()
+comment7.params=
+comment7.target=void\ fireTick()
+comment8.params=
+comment8.target=void\ fire()
+comment9.params=screen\ g
+comment9.target=void\ render(Graphics.Screen,\ java.awt.Graphics)
+numComments=10

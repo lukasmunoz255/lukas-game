@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=id\ x\ y\ tileColor\ levelColor
+comment0.target=BasicSolidTile(int,\ int,\ int,\ int,\ int)
+comment0.text=\r\n\ Constructor\ for\ a\ BasicSolidTile.\ Same\ as\ BasicTile\ but\r\n\ isSolid\ is\ set\ to\ true.\r\n
+numComments=1

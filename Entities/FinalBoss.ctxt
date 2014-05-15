@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=level\ x\ y\ screen\ player\ zombies
+comment0.target=FinalBoss(Game.Level,\ int,\ int,\ Graphics.Screen,\ Player,\ java.util.ArrayList)
+comment1.params=
+comment1.target=void\ fluctuateColor()
+comment2.params=
+comment2.target=int\ getXTile()
+comment3.params=
+comment3.target=int\ getYTile()
+comment4.params=screen\ g
+comment4.target=void\ render(Graphics.Screen,\ java.awt.Graphics)
+comment5.params=xOffset\ yOffset\ screen
+comment5.target=void\ renderHealthBar(int,\ int,\ Graphics.Screen)
+comment6.params=
+comment6.target=void\ tick()
+numComments=7

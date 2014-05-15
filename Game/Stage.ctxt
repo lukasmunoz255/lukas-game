@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=level\ game\ soundPlayer
+comment0.target=Stage(Level,\ Game,\ Sound.WavePlayer)
+comment1.params=
+comment1.target=void\ tick()
+comment2.params=scrn\ xOff\ yOff
+comment2.target=void\ renderTiles(Graphics.Screen,\ int,\ int)
+comment3.params=screen\ g
+comment3.target=void\ renderEntities(Graphics.Screen,\ java.awt.Graphics)
+comment4.params=input
+comment4.target=void\ clicked(InputHandler)
+numComments=5

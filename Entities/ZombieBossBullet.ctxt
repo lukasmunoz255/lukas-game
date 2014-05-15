@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=level\ x\ y\ destinationX\ destinationY\ originX\ originY\ index
+comment0.target=ZombieBossBullet(Game.Level,\ int,\ int,\ int,\ int,\ int,\ int,\ int)
+comment1.params=
+comment1.target=boolean\ fromZombie()
+comment2.params=screen\ g
+comment2.target=void\ render(Graphics.Screen,\ java.awt.Graphics)
+numComments=3

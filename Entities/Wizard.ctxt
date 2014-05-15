@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=level\ x\ y\ mainPlayer\ worldNumber\ zombies
+comment0.target=Wizard(Game.Level,\ int,\ int,\ Player,\ int,\ java.util.ArrayList)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Wizard\r\n
+comment1.params=
+comment1.target=void\ tick()
+comment2.params=
+comment2.target=void\ colorTick()
+comment3.params=
+comment3.target=void\ zombieTick()
+numComments=4

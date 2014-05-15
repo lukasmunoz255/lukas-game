@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=level\ x\ y\ input\ screen\ name\ username\ ipAddress\ port
+comment0.target=PlayerMP(Game.Level,\ int,\ int,\ Game.InputHandler,\ Graphics.Screen,\ java.lang.String,\ java.lang.String,\ java.net.InetAddress,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PlayerMP\r\n
+comment1.params=level\ x\ y\ screen\ name\ userName\ ipAddress\ port
+comment1.target=PlayerMP(Game.Level,\ int,\ int,\ Graphics.Screen,\ java.lang.String,\ java.lang.String,\ java.net.InetAddress,\ int)
+comment2.params=screen\ g
+comment2.target=void\ render(Graphics.Screen,\ java.awt.Graphics)
+comment3.params=
+comment3.target=java.lang.String\ getUsername()
+comment4.params=
+comment4.target=void\ tick()
+numComments=5

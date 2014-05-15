@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=game
+comment0.target=GameServer(Game.Game)
+comment1.params=
+comment1.target=void\ run()
+comment2.params=data\ address\ port
+comment2.target=void\ parsePacket(byte[],\ java.net.InetAddress,\ int)
+comment3.params=player\ packet
+comment3.target=void\ addConnection(Entities.PlayerMP,\ Packets.Packet00Login)
+comment4.params=data\ ipAddress\ port
+comment4.target=void\ sendData(byte[],\ java.net.InetAddress,\ int)
+comment5.params=data
+comment5.target=void\ sendDataToAllClients(byte[])
+numComments=6

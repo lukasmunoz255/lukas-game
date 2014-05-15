@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=level\ x\ y
+comment0.target=GunSpeedPowerUp(Game.Level,\ int,\ int)
+comment1.params=
+comment1.target=void\ colorTick()
+comment2.params=p
+comment2.target=void\ powerUp(Player)
+comment3.params=
+comment3.target=void\ remove()
+numComments=4
