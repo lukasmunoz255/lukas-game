@@ -1,4 +1,8 @@
 #BlueJ class context
 comment0.params=msg\ screen\ x\ y\ color\ scale
 comment0.target=void\ render(java.lang.String,\ Screen,\ int,\ int,\ int,\ int)
-numComments=1
+comment0.text=\n\ Renders\ the\ message\ 'msg\ on\ the\ Screen\ 'screen\ at\ the\ coordinates\ ('x,\ 'y)\ with\ a\ color\ 'color\n\ and\ at\ a\ scale\ 'scale.\n
+comment1.params=charIndex
+comment1.target=boolean\ isInString(int)
+comment1.text=\n\ Returns\ true\ if\ the\ index\ 'charIndex\ for\ the\ a\ char\ in\ the\ string\ 'chars\ is\ NOT\ -1,\n\ indicating\ that\ the\ char\ is\ in\ the\ string\n
+numComments=2
