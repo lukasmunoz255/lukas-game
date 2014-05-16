@@ -9,7 +9,7 @@ comment11.params=
 comment11.target=boolean\ isBullet()
 comment2.params=
 comment2.target=void\ tick()
-comment2.text=\r\n\ \ \ \ public\ void\ setIndex(int\ newIndex)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ index\ \=\ newIndex;\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ int\ getIndex()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ return\ index;\r\n\ \ \ \ }\r\n
+comment2.text=\n\ \ \ \ public\ void\ setIndex(int\ newIndex)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ index\ \=\ newIndex;\n\ \ \ \ }\n\ \ \ \ \n\ \ \ \ public\ int\ getIndex()\n\ \ \ \ {\n\ \ \ \ \ \ \ \ return\ index;\n\ \ \ \ }\n
 comment3.params=screen\ g
 comment3.target=void\ render(Graphics.Screen,\ java.awt.Graphics)
 comment4.params=

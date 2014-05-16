@@ -43,7 +43,7 @@ public class Screen
      * ('xPos, 'yPos).
      */
     public final void render(final int xPos, final int yPos, final int tile, final int color, final int mirrorDir, final double scale) {
-        final int newXPos = xPos - xOffset,
+        /*final int newXPos = xPos - xOffset,
         newYPos = yPos - yOffset,
         xTile = tile % 32,
         yTile = tile / 32,
@@ -72,7 +72,8 @@ public class Screen
                     } 
                 } 
             } 
-        }
+        }*/
+        render(xPos, yPos, tile, color, false, false, scale);
     }
 
     /**
@@ -113,10 +114,5 @@ public class Screen
                 } 
             } 
         } 
-    } 
-
-    /*public void renderPlayer(int xPos, int newYPos, int tile, int color, boolean xMirror, boolean yMirror, double scale, double theta)
-    {
-
-    }*/
+    }
 } 

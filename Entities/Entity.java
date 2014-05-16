@@ -12,22 +12,15 @@ import java.awt.Graphics;
  */
 public abstract class Entity
 {
-    public int x, y;
-    public int index;
+    public int x, y, index;
     protected Level level;
-    protected int scale = 1;
-    protected int xMin;
-    protected int xMax;
-    protected int yMin;
-    protected int yMax;
+    protected int scale = 1, xMin, xMax, yMin, yMax;
 
-    public Entity(Level level)
-    {
+    public Entity(Level level) {
         init(level);
     }
 
-    public final void init(Level level)
-    {
+    public final void init(Level level) {
         this.level = level;
     }
     
