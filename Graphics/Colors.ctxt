@@ -1,12 +1,16 @@
 #BlueJ class context
 comment0.params=color1\ color2\ color3\ color4
 comment0.target=int\ get(int,\ int,\ int,\ int)
-comment0.text=\r\n\ On\ our\ spritesheet,\ you\ ill\ notice\ that\ there\ are\ only\ four\ colors\ used\ and\r\n\ all\ of\ them\ are\ different\ shades\ of\ black\ and\ white.\ color1\ is\ black,\ color2\ is\r\n\ dark\ gray,\ color3\ is\ light\ gray,\ and\ color4\ is\ white.\ \r\n
+comment0.text=\n\ On\ our\ spritesheet,\ you\ will\ notice\ that\ there\ are\ only\ four\ colors\ used\ and\n\ all\ of\ them\ are\ different\ shades\ of\ black\ and\ white.\ 'color1\ is\ black,\ 'color2\ is\n\ dark\ gray,\ 'color3\ is\ light\ gray,\ and\ 'color4\ is\ white.\n
 comment1.params=color
 comment1.target=int\ get(int)
-comment1.text=\r\n\ Returns\ a\ simplified\ version\ of\ a\ color.\ A\ call\ to\ Colors.get(351)\ would\ return\ a\ color\ \r\n\ with\ 3\ parts\ red,\ 5\ parts\ green,\ and\ 1\ part\ blue.\ All\ of\ the\ shades\ are\ scaled\ up\ as\ well\r\n\ to\ only\ allow\ for\ 6\ shades\ of\ each.\ For\ example\ a\ call\ to\ Colors.get(958)\ would\ be\ the\ same\ \r\n\ as\ Colors.get(555).\r\n
+comment1.text=\n\ Returns\ a\ simplified\ version\ of\ a\ color.\ A\ call\ to\ Colors.get(351)\ would\ return\ a\ color\ \n\ with\ 3\ parts\ red,\ 5\ parts\ green,\ and\ 1\ part\ blue.\ All\ of\ the\ shades\ are\ scaled\ up\ as\ well\n\ to\ only\ allow\ for\ 6\ shades\ of\ each.\ For\ example\ a\ call\ to\ Colors.get(958)\ would\ be\ the\ same\ \n\ as\ Colors.get(555).\n
 comment2.params=
 comment2.target=int\ getRandom()
+comment2.text=\n\ Returns\ number\ between\ 0\ and\ 555\ (inclusive).\n
 comment3.params=index
 comment3.target=int\ getRandomColor(int)
-numComments=4
+comment4.params=num\ lower\ upper
+comment4.target=int\ bound(int,\ int,\ int)
+comment4.text=\n\ Returns\ the\ number\ 'num\ bounded\ by\ a\ lower\ and\ upper\ bound\ 'lower\ and\ 'upper\ respectively.\ If\n\ 'num\ is\ out\ of\ the\ bounds,\ the\ bound\ is\ returned\ instead.\n
+numComments=5
