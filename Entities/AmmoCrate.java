@@ -8,54 +8,44 @@ import Graphics.Colors;
 import java.awt.Graphics;
 
 /**
- * Write a description of class AmmoCrate here.
+ * Adds more ammo to your gun.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lukas Muñoz, Luke Staunton, JCL
  */
 public class AmmoCrate extends PowerUp
 {
     public int index;
     private Timer lifeTimer;
     
-    public AmmoCrate(Level level, int x, int y, int index)
-    {
+    public AmmoCrate(final Level level, final int x, final int y, final int index) {
         super(level, x, y, 000);
         this.index = index;
-        xTile = 0;
-        yTile = 14;
+        this.xTile = 0;
+        this.yTile = 14;
         this.color = Colors.get(-1, 000, 510, 222);
-        lifeTimer = new Timer();
-        lifeTimer.start();
+        this.lifeTimer = new Timer();
+        this.lifeTimer.start();
         this.scale = 2;
         setSoundFile("Sound/reloadsound.wav");
     }
     
-    public void render(Screen screen, Graphics g)
-    {
-        int modifier = (int)(8 * scale);
-        int xOffset = x - modifier / 2;
-        int yOffset = y - modifier / 4 - 4;
+    public final void render(final Screen screen, final Graphics g) {
+        int modifier = (int)(8 * scale),
+        xOffset = x - modifier / 2,
+        yOffset = y - modifier / 4 - 4;
         screen.render(xOffset, yOffset, xTile + yTile*32, color, 0, scale);
     }
     
-    public void powerUp(Player p)
-    {
-        p.addAmmo(25);
-    }
+    public final void powerUp(final Player p) { p.addAmmo(25); }
     
-    public void tick()
-    {
+    public void tick() {
         super.tick();
-        if(lifeTimer.getTime() >= 15000)
-            remove();
+        if(lifeTimer.getTime() >= 15000) { remove(); }
     }
     
-    public void remove()
-    {
-        level.removeAmmoCrate(index);
-    }
+    public void remove() { level.removeAmmoCrate(index); }
     
-    public void colorTick()
-    {}
+    public void colorTick() {
+        // Do nothing
+    }
 }

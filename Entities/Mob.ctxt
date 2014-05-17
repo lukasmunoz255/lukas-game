@@ -5,7 +5,6 @@ comment1.params=
 comment1.target=boolean\ isAlive()
 comment2.params=xa\ ya\ x\ y
 comment2.target=boolean\ isSolidTile(int,\ int,\ int,\ int)
-comment2.text=\n\ \ \ \ protected\ boolean\ isBullet(int\ x,\ int\ y)\n\ \ \ \ 3693\n\n\ \ \ \ {\n\ \ \ \ for(int\ xa\ \=\ x;\ xa\ <\ x+4;\ xa++)\n\ \ \ \ {\n\ \ \ \ for(int\ ya\ \=\ y;\ y\ <\ y+4;\ y++)\n\ \ \ \ {\n\ \ \ \ if(level.isBullet(xa,\ ya))\n\ \ \ \ return\ true;\n\ \ \ \ }\n\ \ \ \ }\n\ \ \ \ return\ false;\n\ \ \ \ }\n
 comment3.params=
 comment3.target=java.lang.String\ getName()
 numComments=4

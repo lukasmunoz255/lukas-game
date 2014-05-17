@@ -4,41 +4,32 @@ import Game.Level;
 import Graphics.Colors;
 
 /**
- * Write a description of class GunSpeedPowerUp here.
+ * A power up that speeds up the fire rate.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lukas Muñoz, Luke Staunton, JCL
  */
-public class GunSpeedPowerUp extends PowerUp
-{
-    private boolean goingDown = true;
+public final class GunSpeedPowerUp extends PowerUp{
+    private boolean goingDown;
 
-    public GunSpeedPowerUp(Level level, int x, int y)
-    {
+    public GunSpeedPowerUp(Level level, int x, int y) {
         super(level, x, y, 500);
+        goingDown = true;
     }
 
-    protected void colorTick()
-    {
-        if(primaryColor / 100 >= 5)
-            goingDown = true;
-        else if(primaryColor / 100 <= 0)
-            goingDown = false;
-        if(goingDown)
-            primaryColor -= 100;
-        else
-            primaryColor += 100;
+    protected final void colorTick() {
+        if(primaryColor / 100 >= 5) { goingDown = true; }
+        else if(primaryColor / 100 <= 0) { goingDown = false; }
+        
+        if(goingDown) { primaryColor -= 100; }
+        else { primaryColor += 100;}
+        
         color = Colors.get(-1, 000, primaryColor, -1);
     }
 
-    protected void powerUp(Player p)
-    {
+    protected final void powerUp(Player p) {
         p.fastFire = true;
         p.powerUpTimer.start();
     }
     
-    protected void remove()
-    {
-        level.removePowerUp();
-    }
+    protected final void remove() { level.removePowerUp(); }
 }

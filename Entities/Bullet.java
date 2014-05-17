@@ -6,97 +6,73 @@ import Graphics.Colors;
 import java.awt.Graphics;
 
 /**
- * Write a description of class Bullet here.
+ * The bullet object.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lukas Muñoz, Luke Staunton, JCL
  */
-public class Bullet extends Mob
-{
+public class Bullet extends Mob {
     protected int color = Colors.get(-1, 111, -1, -1);
     protected double scale = 1.0;
-    public double deltaY;
-    public double deltaX;
+    public double deltaY, deltaX;
 
-    public Bullet(Level level, int x, int y, int destinationX, int destinationY, 
-    int originX, int originY, int index)
-    {   
+    public Bullet(final Level level, final int x, final int y, final int destinationX, final int destinationY, 
+    final int originX, final int originY, final int index) {   
         super(level, "bullet", x, y, 1);
-        double bulletSpeed = 13.192837465;
+        final double bulletSpeed = 13.192837465;
         this.index = index;
         this.health = 1;
-        double top = destinationY - originY;
-        double bottom = destinationX - originX;
-        deltaY = Math.abs(top) * bulletSpeed / (Math.abs(bottom) + Math.abs(top));
-        if(top < 0)
-            deltaY = -deltaY;
-        deltaX = bulletSpeed - Math.abs(deltaY);
-        if(bottom < 0)
-            deltaX = -deltaX;
+        final double top = destinationY - originY,
+        bottom = destinationX - originX;
+        
+        deltaY = top * bulletSpeed / (Math.abs(bottom) + Math.abs(top));
+
+        deltaX = (bulletSpeed - Math.abs(deltaY)) * ((bottom < 0) ? (-1) : (1));
         this.xMin = 2;
-        this.xMin = 6;
+        this.xMax = 6;
         this.yMin = 2;
         this.yMax = 6;
     }
 
-    public short getHealth()
-    {
-        return health;
-    }
+    public final short getHealth() { return health; }
 
-    public void move(double xa, double ya)
-    {
-        if(this.rightPixelX() > level.width * 8 || this.leftPixelX() < 0 ||
-        this.bottomPixelY() > level.height * 8 || this.topPixelY() < 0)
+    public final void move(final double xa, final double ya) {
+        if(this.rightPixelX() > level.width * 8 ||
+        this.leftPixelX() < 0 ||
+        this.bottomPixelY() > level.height * 8 ||
+        this.topPixelY() < 0) {
             level.removeBullet(index);
-        else if(hasCollided((int)xa, (int)ya))
-            level.removeBullet(index);
-        if(index < level.bullets.size())
-        {
-            if(xa > 0 && ya > 0)
-            {
+        } else if(hasCollided((int)xa, (int)ya)) { level.removeBullet(index); }
+        
+        if(index < level.bullets.size()) {
+            if(xa > 0 && ya > 0) {
                 move(xa, 0);
                 move(0, ya);
-            }
-            else
-            {
+            } else {
                 x += xa * speed;
                 y += ya * speed;
             }
         }
     }
 
-    public void hit()
-    {
-        health--;
-    }
+    public final void hit() { --health; }
 
-    public void tick()
-    {
-        move(deltaX, deltaY);
-    }
+    public final void tick() { move(deltaX, deltaY); }
 
-    public void render(Screen screen, Graphics g)
-    {
-        int xTile = 0;
-        int yTile = 2;
+    public void render(final Screen screen, final Graphics g) {
+        final int xTile = 0,
+        yTile = 2;
         screen.render(x, y, xTile + yTile * 32, color, 0, scale); 
     }
 
-    public boolean hasCollided(int xa, int ya) 
-    { 
-        for(int x = xMin; x < xMax; x++) 
-        { 
-            if(isSolidTile(xa, ya, x, yMin)) 
-                return true; //left
-        } 
-        for(int x = xMin; x < xMax; x++) 
-        { 
-            if(isSolidTile(xa, ya, x, yMax)) 
-                return true; //left
-        } 
-        for(int y = yMin; y < yMax; y++) 
-        { 
+    public boolean hasCollided(final int xa, final int ya) { 
+        for(int x = xMin; x < xMax; ++x) { 
+            if(isSolidTile(xa, ya, x, yMin)) { return true; /* left */ }
+        }
+        for(int x = xMin; x < xMax; ++x) { 
+            if(isSolidTile(xa, ya, x, yMax)) { return true; /* left */ }
+        }
+        for(int y = yMin; y < yMax; y++) {
+            assert false; //START BACK FROM HERE
             if(isSolidTile(xa, ya, xMin, y)) 
                 return true; //bottom
         } 
@@ -113,8 +89,8 @@ public class Bullet extends Mob
         return false;
     }
     
-    public boolean isBullet()
+    /*public boolean isBullet()
     {
         return true;
-    }
+    }*/
 }

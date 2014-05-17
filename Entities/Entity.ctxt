@@ -5,11 +5,8 @@ comment1.params=level
 comment1.target=void\ init(Game.Level)
 comment10.params=
 comment10.target=double\ topPixelY()
-comment11.params=
-comment11.target=boolean\ isBullet()
 comment2.params=
 comment2.target=void\ tick()
-comment2.text=\n\ \ \ \ public\ void\ setIndex(int\ newIndex)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ index\ \=\ newIndex;\n\ \ \ \ }\n\ \ \ \ \n\ \ \ \ public\ int\ getIndex()\n\ \ \ \ {\n\ \ \ \ \ \ \ \ return\ index;\n\ \ \ \ }\n
 comment3.params=screen\ g
 comment3.target=void\ render(Graphics.Screen,\ java.awt.Graphics)
 comment4.params=
@@ -24,4 +21,4 @@ comment8.params=
 comment8.target=double\ bottomPixelY()
 comment9.params=
 comment9.target=double\ leftPixelX()
-numComments=12
+numComments=11
