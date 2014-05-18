@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=xPos\ yPos\ color\ fontColor\ msg\ input
 comment0.target=Button(int,\ int,\ int,\ int,\ java.lang.String,\ InputHandler)
-comment0.text=\r\n\ Constructor\ for\ Buttons.\ width\ must\ be\ greater\ than\ 1.\ Width\ is\ just\ the\ number\r\n\ of\ middle\ tiles\ make\ up\ the\ button.\r\n
+comment0.text=\n\ Constructor\ for\ Buttons.\ width\ must\ be\ greater\ than\ 1.\ Width\ is\ just\ the\ number\n\ of\ middle\ tiles\ make\ up\ the\ button.\n
 comment1.params=color
 comment1.target=int\ colorChange(int)
 comment2.params=

@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=level\ game
 comment0.target=WaitingScreen(Level,\ Game)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ WaitingScreen\r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ WaitingScreen\n
 comment1.params=
 comment1.target=void\ initialize()
 comment2.params=screen\ g

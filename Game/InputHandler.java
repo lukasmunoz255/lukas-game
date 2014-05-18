@@ -100,6 +100,11 @@ public class InputHandler implements KeyListener, MouseListener, MouseMotionList
      */
     public void keyPressed(KeyEvent e)
     {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) { // Toggles the debugger on and off
+            Debugger.DebuggerOn = !Debugger.DebuggerOn;
+        } else if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+            Debugger.clear();
+        }
         if(screenType == 1)
         {
             if(e.getKeyCode() == KeyEvent.VK_P)

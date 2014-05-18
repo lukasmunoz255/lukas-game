@@ -191,9 +191,11 @@ public class Game extends Canvas implements Runnable
 
         g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
         currentStage.renderEntities(screen, g); //Make sure this is after drawImage!!!!
-
+        
+        
         g.dispose();
         bs.show();
+        if (Debugger.DebuggerOn) { Debugger.render(screen); }
     }
 
     /**
@@ -218,6 +220,7 @@ public class Game extends Canvas implements Runnable
             {
                 delta -= 10;
                 render();
+                
             }
             if(System.currentTimeMillis() - lastTimer >= 1000)
                 lastTimer += 1000;
@@ -298,6 +301,7 @@ public class Game extends Canvas implements Runnable
 
     public void resetHighScores()
     {
+        Debugger.sendMsg("resseting high scores!");
         try
         {
             String str = ". aaa 0";

@@ -291,7 +291,7 @@ public class GameScreen extends Stage
     
     public void finalBoss()
     {
-        Font.notOK = true;
+        Font.ok = false;
 
         if(!time.isRunning())
         {
@@ -310,7 +310,7 @@ public class GameScreen extends Stage
                     lev.getMainPlayer(), enemies);
             worlds[worldNumber-1].addEntity(boss);
             enemies.add(boss);
-            Font.notOK = false;
+            Font.ok = true;
         }
     }
 

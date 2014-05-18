@@ -20,13 +20,14 @@ public final class Font {
             final String uppercaseMsg = msg.toUpperCase();
             for(int iter = 0; iter < uppercaseMsg.length(); ++iter) {
                 final int charIndex = legalCharacters.indexOf(uppercaseMsg.charAt(iter));
+                int charToRender;
                 if(isInString(charIndex)) {
                     screen.render(x + iter*8*scale, y, charIndex + 30 * 32, color, 0x00, scale);
                 }
             }
         }
     }
-    
+
     /**
      * Returns true if the index 'charIndex for the a char in the string 'chars is NOT -1,
      * indicating that the char is in the string

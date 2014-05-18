@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=level\ game\ screen\ input\ soundPlayer
 comment0.target=HighScoresScreen(Level,\ Game,\ Graphics.Screen,\ InputHandler,\ Sound.WavePlayer)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ HighScoresScreen\r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ HighScoresScreen\n
 comment1.params=
 comment1.target=void\ updateHighScores()
 comment2.params=screen\ g

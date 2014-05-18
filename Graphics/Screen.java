@@ -43,36 +43,6 @@ public class Screen
      * ('xPos, 'yPos).
      */
     public final void render(final int xPos, final int yPos, final int tile, final int color, final int mirrorDir, final double scale) {
-        /*final int newXPos = xPos - xOffset,
-        newYPos = yPos - yOffset,
-        xTile = tile % 32,
-        yTile = tile / 32,
-        tileOffset = (xTile << 3) + (yTile << 3) * sheet.width;
-
-        final boolean xMirror = (mirrorDir & BITMIRRORX) > 0,
-        yMirror = (mirrorDir & BITMIRRORY) > 0; 
-
-        final double scaleMap = scale - 1; 
-
-        for(int yIter = 0; yIter < PIXELPERTILE; ++yIter) { 
-            final int ySheet = (yMirror) ? (7 - yIter) : (yIter);
-            final int yPixel = yIter + newYPos + (int)((yIter * scaleMap) - ((scaleMap * 8.0) / 2.0)); 
-            for(int xIter = 0; xIter < PIXELPERTILE; ++xIter)  { 
-                final int xSheet = (xMirror) ? (7 - xIter) : (xIter);
-                final int xPixel = xIter + newXPos + (int)((xIter * scaleMap) - ((scaleMap * 8.0) / 2.0)); 
-                final int col = (color >> (sheet.pixels[xSheet + ySheet * sheet.width + tileOffset] * PIXELPERTILE)) & 255; 
-                
-                if(col >= 255) { continue ; }
-                
-                for(int yScale = 0; yScale < scale; yScale++) { 
-                    if (outOfBounds(yPixel + yScale, 0, height - 1)) { continue; }
-                    for(int xScale = 0; xScale < scale; xScale++) { 
-                        if (outOfBounds(xPixel + xScale, 0, width - 1)) { continue; }
-                        pixels[(xPixel + xScale) + (yPixel + yScale) * width] = col;
-                    } 
-                } 
-            } 
-        }*/
         render(xPos, yPos, tile, color, false, false, scale);
     }
 

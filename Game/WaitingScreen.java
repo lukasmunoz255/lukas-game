@@ -43,7 +43,7 @@ public class WaitingScreen extends Stage
             PlayerMP player = new PlayerMP(null, 100, 100, game.input, game.gameScreen.screen, "player", 
                     username, null, -1);
             game.gameScreen.replacePlayer(player, 0);
-            loginPacket = new Packet00Login(player.getUsername());
+            //loginPacket = new PacketLogin(player.getUsername());
             yes = true;
             socketServer.addConnection(player, loginPacket);
         }
@@ -53,9 +53,9 @@ public class WaitingScreen extends Stage
             PlayerMP player = new PlayerMP(null, 100, 100, game.input, game.gameScreen.screen, "player", 
                     JOptionPane.showInputDialog(game, "Enter a username"), null, -1);
             game.gameScreen.replacePlayer(player, 0);
-            loginPacket = new Packet00Login(player.getUsername());
+            //loginPacket = new Packet00Login(player.getUsername());
 
-            .addConnection(player, loginPacket);
+            //.addConnection(player, loginPacket);
         }
 
         socketClient = new GameClient(game, "localhost");

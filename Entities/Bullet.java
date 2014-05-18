@@ -64,33 +64,16 @@ public class Bullet extends Mob {
         screen.render(x, y, xTile + yTile * 32, color, 0, scale); 
     }
 
-    public boolean hasCollided(final int xa, final int ya) { 
+    public final boolean hasCollided(final int xa, final int ya) { 
         for(int x = xMin; x < xMax; ++x) { 
-            if(isSolidTile(xa, ya, x, yMin)) { return true; /* left */ }
+            if(isSolidTile(xa, ya, x, yMin) || isSolidTile(xa, ya, x, yMax)) { return true; }
         }
-        for(int x = xMin; x < xMax; ++x) { 
-            if(isSolidTile(xa, ya, x, yMax)) { return true; /* left */ }
-        }
-        for(int y = yMin; y < yMax; y++) {
-            assert false; //START BACK FROM HERE
-            if(isSolidTile(xa, ya, xMin, y)) 
-                return true; //bottom
-        } 
-        for(int y = yMin; y < yMax; y++) 
-        { 
-            if(isSolidTile(xa, ya, xMax, y)) 
-                return true; // right
+        for(int y = yMin; y < yMax;++ y) {
+            if(isSolidTile(xa, ya, xMin, y) || isSolidTile(xa, ya, xMax, y)) { return true; }
         } 
         return false; 
     }
     
-    public boolean fromZombie()
-    {
-        return false;
-    }
+    public boolean fromZombie() { return false; }
     
-    /*public boolean isBullet()
-    {
-        return true;
-    }*/
 }
