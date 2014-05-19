@@ -10,4 +10,6 @@ comment2.target=void\ render(Graphics.Screen)
 comment2.text=\n\ Renders\ the\ debugger\ on\ the\ Screen\ 'screen.\n
 comment3.params=
 comment3.target=void\ clear()
-numComments=4
+comment4.params=timeElapsedMillis
+comment4.target=void\ update(long)
+numComments=5

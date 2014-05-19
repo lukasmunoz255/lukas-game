@@ -6,16 +6,14 @@ import Graphics.Screen;
 import java.awt.Graphics;
 
 /**
- * Write a description of class ZombieBullet here.
+ * The class for Zombie Boss Bullets.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lukas Muñoz, Luke Staunton, JCL
  */
 public class ZombieBossBullet extends Bullet
 {
     public ZombieBossBullet(Level level, int x, int y, int destinationX, int destinationY, 
-    int originX, int originY, int index)
-    {
+    int originX, int originY, int index) {
         super(level, x, y, destinationX, destinationY, originX, originY, index);
         this.health = 2;
         this.xMin = -4;
@@ -24,13 +22,9 @@ public class ZombieBossBullet extends Bullet
         this.yMax = 12;
     }
     
-    public boolean fromZombie()
-    {
-        return true;
-    }
+    public final boolean fromZombie() { return true; }
     
-    public void render(Screen screen, Graphics g)
-    {
+    public final void render(Screen screen, Graphics g) {
         int xTile = 2;
         int yTile = 2;
         screen.render(x, y, xTile + yTile * 32, color, 0, scale); 

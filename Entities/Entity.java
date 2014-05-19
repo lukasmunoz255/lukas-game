@@ -3,7 +3,7 @@ package Entities;
 import Game.Level;
 import Graphics.Screen;
 import java.awt.Graphics;
-
+import Game.Debugger;
 /**
  * The superclass for all game entities who will extend it.
  * 
@@ -14,7 +14,12 @@ public abstract class Entity{
     protected Level level;
     protected int scale = 1, xMin, xMax, yMin, yMax;
 
-    public Entity(Level level) { init(level); }
+    public Entity(Level level) {
+        init(level);
+        if (!(this instanceof Bullet)) {
+            Debugger.sendMsg(String.format("Created (%s)", this));
+        }
+    }
 
     public final void init(Level level) { this.level = level; }
 

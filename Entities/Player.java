@@ -9,6 +9,7 @@ import Graphics.Colors;
 import Graphics.Font;
 import Game.Timer;
 import Game.Game;
+import Game.Debugger;
 
 import Game.Tile;
 import Game.BasicHurtingTile;
@@ -33,33 +34,22 @@ public abstract class Player extends Mob
     public double scale = 1; 
     public int index; 
     protected Screen screen; 
-    protected int width; 
-    protected int height; 
+    protected int width, height;
 
     protected String path2;
 
-    int xTile;
-    int yTile;
+    int xTile, yTile;
     private int ammo; 
     protected boolean canFire;
-    public boolean fastFire = false;
-    public boolean rapidFire = true;
-    public boolean bulletUpgrade = false;
+    public boolean fastFire = false,
+    rapidFire = true,
+    bulletUpgrade = false;
 
-    protected Timer gunTimer;
-    protected Timer healthTimer;
-    private Timer nomTimer;
-    private Timer garbageTimer;
-    public Timer powerUpTimer;
+    protected Timer gunTimer, healthTimer, nomTimer, garbageTimer, powerUpTimer;
 
-    public WavePlayer shot1;
-    public WavePlayer shot2;
-    private WaveFile gunShot;
-    private WaveFile gunClick;
-    private WavePlayer ohShit;
-    private WaveFile shiz;
-    private WavePlayer nom1;
-    private WaveFile omnomnom;
+    public WavePlayer shot1, shot2, ohShit, nom1;
+    private WaveFile gunShot, gunClick, shiz, omnomnom;
+
     private boolean coordinateGunSounds = false;
 
     public BufferedImage image;
@@ -67,8 +57,7 @@ public abstract class Player extends Mob
     /**
      * Sets the string path2 for the path to where this is for finding the sounds
      */
-    public Player(Level level, int x, int y, InputHandler input, Screen screen, String name) 
-    { 
+    public Player(final Level level, final int x, final int y, final InputHandler input, Screen screen, String name) { 
         super(level, name, x, y, 7); //The last value is for speed 
         path2 = getClass().getClassLoader().getResource(".").getPath();
         xMax = 16;
@@ -85,12 +74,10 @@ public abstract class Player extends Mob
         powerUpTimer = new Timer();
         garbageTimer.start();
         ohShit = new WavePlayer();
-        //nom1 = new WavePlayer();
         enlargeBadPicture();
         nom1 = new WavePlayer();
         try
         {
-
             shiz = new WaveFile(path2 + "Sound/holyshit.wav");
             gunShot = new WaveFile(path2 + "Sound/gunshot.wav");
             shot1 = new WavePlayer();
@@ -106,6 +93,7 @@ public abstract class Player extends Mob
 
     public void setLevel(Level level)
     {
+        Debugger.sendMsg(String.format("set player level to %s", level));
         this.level = level;
     }
 
@@ -468,6 +456,7 @@ public abstract class Player extends Mob
 
     public void addAmmo(int addition)
     {
+        
         this.ammo += addition;
     }
 

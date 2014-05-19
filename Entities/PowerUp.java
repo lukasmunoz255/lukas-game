@@ -6,6 +6,7 @@ import Graphics.Colors;
 import java.awt.Graphics;
 import Sound.WavePlayer;
 import Sound.WaveFile;
+import Game.Debugger;
 
 /**
  * The super class for all powerups used in the game.
@@ -65,6 +66,7 @@ public abstract class PowerUp extends Entity {
         p.leftPixelX()+p.width() >= leftPixelX()-5 &&
         p.topPixelY() <= topPixelY()+height()-15 &&
         p.topPixelY()+p.height() >= topPixelY()-15) {
+            Debugger.sendMsg(String.format("Picked up %s at (%d,%d)", getClass().getSimpleName(), x, y));
             powerUp(p);
             remove();
             sound.play(soundFile);

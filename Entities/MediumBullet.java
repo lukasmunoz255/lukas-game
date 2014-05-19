@@ -6,10 +6,9 @@ import Graphics.Screen;
 import java.awt.Graphics;
 
 /**
- * Write a description of class MediumBullet here.
+ * The class for MediumBullets.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lukas Muñoz, Luke Stauton, JCL
  */
 public class MediumBullet extends Bullet
 {
@@ -17,8 +16,7 @@ public class MediumBullet extends Bullet
      * Constructor for objects of class MediumBullet
      */
     public MediumBullet(Level level, int x, int y, int destinationX, int destinationY, 
-    int originX, int originY, int index)
-    {
+    int originX, int originY, int index) {
         super(level, x, y, destinationX, destinationY, originX, originY, index);
         this.health = 3;
         this.xMin = -2;
@@ -27,15 +25,10 @@ public class MediumBullet extends Bullet
         this.yMax = 10;
     }
 
-    public boolean fromZombie()
-    {
-        return false;
-    }
+    public boolean fromZombie() { return false; }
     
-    public void render(Screen screen, Graphics g)
-    {
-        int xTile = 1;
-        int yTile = 2;
+    public void render(final Screen screen, final Graphics g) {
+        final int xTile = 1, yTile = 2;
         screen.render(x, y, xTile + yTile * 32, color, 0, scale); 
     }
 }

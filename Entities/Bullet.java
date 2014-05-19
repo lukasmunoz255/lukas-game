@@ -4,6 +4,7 @@ import Game.InputHandler;
 import Graphics.Screen;
 import Graphics.Colors;
 import java.awt.Graphics;
+import Game.Debugger;
 
 /**
  * The bullet object.
@@ -31,6 +32,7 @@ public class Bullet extends Mob {
         this.xMax = 6;
         this.yMin = 2;
         this.yMax = 6;
+        
     }
 
     public final short getHealth() { return health; }
@@ -41,7 +43,9 @@ public class Bullet extends Mob {
         this.bottomPixelY() > level.height * 8 ||
         this.topPixelY() < 0) {
             level.removeBullet(index);
-        } else if(hasCollided((int)xa, (int)ya)) { level.removeBullet(index); }
+        } else if(hasCollided((int)xa, (int)ya)) {
+            level.removeBullet(index);
+        }
         
         if(index < level.bullets.size()) {
             if(xa > 0 && ya > 0) {

@@ -45,10 +45,7 @@ public class Zombie extends Player
     public Zombie(Level level, int x, int y, Player mainPlayer, int worldNumber)
     {
         super(level, x, y, null, null, "Zombie");
-        //this.random = new Random();
         this.scale = 2;
-        //xTile = 0;
-        //yTile = 25;
         this.mainPlayer = mainPlayer;
         this.speed = 2 + worldNumber/4;
         this.alive = true;
@@ -71,32 +68,6 @@ public class Zombie extends Player
         {
             e.printStackTrace();
         }
-
-        /*try
-        {
-        image = ImageIO.read(new File("/Images/Zombie.png"));
-        BufferedImage newImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
-        for(int xLuker = 0; xLuker < image.getWidth(); xLuker++)
-        {
-        for(int yLuker = 0; yLuker < image.getHeight(); yLuker++)
-        {
-        int rgb = image.getRGB(xLuker, yLuker);
-        if((rgb & 0x00FFFFFF)  == 0x00FFFFFF)
-        newImage.setRGB(xLuker, yLuker, 0x00055555);
-        else if((rgb & 0x00FFFFFF)  == 0x00AAAAAA)
-        newImage.setRGB(xLuker, yLuker, 0xFF85009F);
-        else if((rgb & 0x00FFFFFF)  == 0x00AAAAAA)
-        newImage.setRGB(xLuker, yLuker, 0xFFBE40FF);
-        else
-        newImage.setRGB(xLuker, yLuker, rgb);
-        }
-        }
-        image = newImage;
-        }
-        catch(IOException e)
-        {
-        e.printStackTrace();
-        }*/
     }
 
     protected int getColorOnWorld(int worldNumber)
@@ -288,44 +259,20 @@ public class Zombie extends Player
 
     public boolean hasCollidedX(int xa)
     {
-        /*if(xa <= 0)
-            xa *= 8;
-        for(int y = 0; y <= height(); y++)
-        {
-            if(isSolidTile(xa, 0, 0, y))
-                return true; // left
-            if(isSolidTile(xa, 0, (int)width(), y))
-                return true;
-        }*/
         for(int x = -7; x < width() + 1; x++)
         {
             if(isSolidTile(xa, 0, x, 0))
                 return true;//right
-            //if(isSolidTile(xa, ya, x, (int)height()))
-              //  return true;
         }
         return false;
     }
 
     public boolean hasCollidedY(int ya)
     {
-        /*if(ya > 0)
-            ya *= 2;
-        else
-            ya *= 8;
-        for(int x = 0; x <= width(); x++)
-        {
-            if(isSolidTile(0, ya, x, 0))
-                return true; 
-            if(isSolidTile(0, ya, x, (int)height()))
-                return true;
-        }*/
         for(int y = -8; y <= height(); y++)
         {
             if(isSolidTile(0, ya, 0, y))
                 return true; // top
-            //if(isSolidTile(xa, ya, (int)width(), y))
-              //  return true;
         }
         return false;
     }

@@ -40,10 +40,6 @@ public class SpawnPoint
         if(zombie == 0)
         {
             zomb = new Zombie(level, x, y, player, worldNumber);
-            //zomb = new FinalBoss(level, x, y, entities.size(), screen, player, zombies);
-            //zomb = new BigZombie(level, x, y, entities.size(), player, worldNumber);
-            //zomb = new Ogre(level, x, y, entities.size(), player, worldNumber);
-            //zomb = new Wizard(level, x, y, entities.size(), player, worldNumber, zombies);
         }
         else if(zombie == 1)
             zomb = new FastSmallZombie(level, x, y, player, worldNumber);
@@ -56,6 +52,7 @@ public class SpawnPoint
         zombies.add(zomb);
         entities.add(zomb);
         spawned = true;
+        Debugger.sendMsg(String.format("Spawned %s at (%d, %d)", zomb.getClass().getSimpleName(), zomb.x, zomb.y));
     }
     
     public boolean isFull()

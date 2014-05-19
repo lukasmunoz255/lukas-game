@@ -2,6 +2,8 @@ package Entities;
 
 import Game.InputHandler;
 import Game.Level;
+import Game.Debugger;
+
 import Graphics.Screen;
 import Graphics.Colors;
 import Graphics.Font;
@@ -31,6 +33,7 @@ public class PlayerMP extends Player
         this.username = username;
         this.ipAddress = ipAddress;
         this.port = port;
+        Debugger.sendMsg(String.format("created a player at (%d, %d)", x, y));
     }
     
     public PlayerMP(Level level, int x, int y, Screen screen, String name, 

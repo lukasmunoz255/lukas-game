@@ -6,8 +6,10 @@ package Game;
  * @author John Lekberg 
  */
 public final class Debugger {
-    private static final char grid[][] = new char[31][50];
-    public static boolean DebuggerOn = true;
+    private static final char grid[][] = new char[31][55];
+    public static boolean DebuggerOn = false;
+    public static long clearPeriod = -1, // -1 means never auto-clear
+    clearTimer = 0;
 
     /**
      * Outputs the string 'msg begining at the location ('row, 'col). This is only used for
@@ -47,7 +49,7 @@ public final class Debugger {
      * Renders the debugger on the Screen 'screen.
      */
     public static final void render(final Graphics.Screen screen) {
-        Graphics.Font.render("GAME DEBUGGER VA", screen, screen.xOffset, screen.yOffset, Graphics.Colors.get(0, 0, 0, 555), 1);
+        Graphics.Font.render("GAME DEBUGGER (Version Alpha)", screen, screen.xOffset, screen.yOffset, Graphics.Colors.get(0, 0, 0, 555), 1);
         for (int rowIter = 0; rowIter != grid.length; ++rowIter) {
             String currentLine = "";
             for (int colIter = 0; colIter != grid[rowIter].length; ++colIter) {
@@ -61,6 +63,16 @@ public final class Debugger {
         for (int rowIter = 0; rowIter != grid.length; ++rowIter) {
             for (int colIter = 0; colIter != grid[rowIter].length; ++colIter) {
                 grid[rowIter][colIter] = '\0';
+            }
+        }
+    }
+
+    public static final void update(final long timeElapsedMillis) {
+        if (clearPeriod != -1) {
+            clearTimer -= timeElapsedMillis;
+            if (clearTimer <= 0) {
+                clear();
+                clearTimer = clearPeriod;
             }
         }
     }

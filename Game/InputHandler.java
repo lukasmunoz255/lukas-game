@@ -102,8 +102,11 @@ public class InputHandler implements KeyListener, MouseListener, MouseMotionList
     {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) { // Toggles the debugger on and off
             Debugger.DebuggerOn = !Debugger.DebuggerOn;
-        } else if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+        } else if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) { // clears the debugger
             Debugger.clear();
+        } else if (e.getKeyCode() == KeyEvent.VK_BACK_QUOTE) { // toggles auto refresh
+            if (Debugger.clearPeriod == -1) { Debugger.clearPeriod = 4000; }
+            else { Debugger.clearPeriod = -1; }
         }
         if(screenType == 1)
         {

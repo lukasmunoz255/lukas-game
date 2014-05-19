@@ -220,7 +220,7 @@ public class Game extends Canvas implements Runnable
             {
                 delta -= 10;
                 render();
-                
+                Debugger.update((long)(nsPerTick / 100000));
             }
             if(System.currentTimeMillis() - lastTimer >= 1000)
                 lastTimer += 1000;

@@ -2,6 +2,8 @@ package Entities;
 
 import Game.Timer;
 import Game.Level;
+import Game.Debugger;
+
 import Graphics.Screen;
 
 import java.awt.Graphics;
@@ -28,6 +30,7 @@ public class ComputerPlayer extends Player
         this.speed = 2;
         this.healthTimer.start();
         rand = new Random();
+        Debugger.sendMsg(String.format("created a computer player at (%d, %d)", x, y));
     }
 
     public void setZombie(Zombie zomb)
