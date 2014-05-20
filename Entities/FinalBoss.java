@@ -10,35 +10,32 @@ import Sound.WaveFile;
 import Sound.WavePlayer;
 
 import java.awt.Graphics;
-//import java.util.Random;
 import java.util.ArrayList;
 
 /**
- * Write a description of class BossWorldFive here.
+ * The class of the final boss.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lukas Muñoz, Luke Staunton, JCL
  */
 public class FinalBoss extends Zombie
 {
-    private int color;
-    private int mainColor = 555;
-    private int subColor = 533;
+    private int color,
+    mainColor = 555,
+    subColor = 533,
+    modifier;
     private Player player;
-    private Timer bulletTimer;
-    private Timer zombieTimer;
-    private Timer laughTimer;
+    private Timer bulletTimer,
+    zombieTimer,
+    laughTimer;
     private Screen screen;
     private ArrayList<Zombie> zombies;
-    private int modifier;
-    private WavePlayer cannonShot1;
-    private WavePlayer laughing;
-    private WaveFile cannon;
-    private WaveFile laugh;
+    private WavePlayer cannonShot1,
+    laughing;
+    private WaveFile cannon,
+    laugh;
     boolean up = false;
 
-    public FinalBoss(Level level, int x, int y, Screen screen, Player player, ArrayList<Zombie> zombies)
-    {
+    public FinalBoss(Level level, int x, int y, Screen screen, Player player, ArrayList<Zombie> zombies) {
         super(level, x, y, player, 1);
         color = Colors.get(-1, 000, mainColor, subColor);
         this.screen = screen;
@@ -61,82 +58,57 @@ public class FinalBoss extends Zombie
         bulletTimer.start();
         cannonShot1 = new WavePlayer();
         laughing = new WavePlayer();
-        try
-        {
+        try {
             cannon = new WaveFile(path2 + "Sound/cannonshot.wav");
             laugh = new WaveFile(path2 + "Sound/finalbosslaugh.wav");
-        }
-        catch(Exception e)
-        {
+        } catch(Exception e) {
             e.printStackTrace();
         }
-        //this.player = player;
     }
 
-    private void fluctuateColor()
-    {
+    private void fluctuateColor() {
         int index = 0;
         int temp = mainColor;
-        if(up)
-        {
-            for(int i = 0; i < 3; i++)
-            {
-                if(temp % 10 >= 5)
-                {
+        if(up) {
+            for(int i = 0; i < 3; ++i) {
+                if(temp % 10 >= 5) {
                     temp/=10;
                     index++;
-                }
-                else
-                    break;
+                } else { break; }
             }
-            if(index >= 3)
-            {
+            if(index >= 3) {
                 mainColor = 554;
                 up = false;
-            }
-            else
+            } else {
                 mainColor += Math.pow(10, index);
-        }
-        else
-        {
-            for(int i = 0; i < 3; i++)
-            {
-                if(temp % 10 <= 0)
-                {
+            }
+        } else {
+            for(int i = 0; i < 3; ++i) {
+                if(temp % 10 <= 0) {
                     temp/=10;
                     index++;
-                }
-                else
-                    break;
+                } else { break; }
             }
-            if(index >= 3)
-            {
+            if(index >= 3) {
                 mainColor = 100;
                 up = true;
-            }
-            else
+            } else {
                 mainColor -= Math.pow(10, index);
+            }
         }
         subColor = 555 - mainColor;
         color = Colors.get(-1, 000, mainColor, subColor);
     }
 
-    public int getXTile()
-    {
-        return 0;
-    }
+    public int getXTile() { return 0; }
 
-    public int getYTile()
-    {
-        return 11;
-    }
+    public int getYTile() { return 11; }
 
-    public void render(Screen screen, Graphics g)
-    {
-        int xTile = getXTile();
-        int yTile = getYTile();
-        int xOffset = x - modifier / 2;  
-        int yOffset = y - modifier / 4 - 4;  
+    public void render(Screen screen, Graphics g) {
+        int xTile = getXTile(),
+        yTile = getYTile(),
+        xOffset = x - modifier / 2,
+        yOffset = y - modifier / 4 - 4;  
 
         screen.render(xOffset, yOffset, xTile + yTile * 32, color, 0, scale);                 //Upper
         screen.render(xOffset + modifier, yOffset, (1 + xTile) + yTile * 32, color, 0, scale);//Body
@@ -153,35 +125,32 @@ public class FinalBoss extends Zombie
         renderHealthBar(xOffset, yOffset, screen);
     }
 
-    private void renderHealthBar(int xOffset, int yOffset, Screen screen)
-    {
+    private void renderHealthBar(int xOffset, int yOffset, Screen screen) {
         int bar = health/2;
-        for(int i = 0; i < bar/10; i++)
+        for(int i = 0; i < bar/10; ++i) {
             screen.render(xOffset + modifier*i*2/(int)scale, yOffset-15, 3+2*32, Colors.get(-1, 500, -1, 000), false, false, 2D);
-        if(bar%10 >= 5)
+        }
+        if(bar%10 >= 5) {
             screen.render(xOffset + modifier*(bar/10)*2/(int)scale, yOffset-15, 3+2*32, Colors.get(-1, 500, -1, 000), false, false, 2D);
-        else
+        } else {
             screen.render(xOffset + modifier*(bar/10)*2/(int)scale, yOffset-15, 4+2*32, Colors.get(-1, 500, -1, 000), false, false, 2D);
+        }
     }
 
-    public void tick()
-    {
-        if(health <= 0)
-        {
-            for(Zombie zomb : zombies)
+    public void tick() {
+        if(health <= 0) {
+            for(Zombie zomb : zombies) {
                 zomb.alive = false;
+            }
             alive = false;
         }
-        if(alive)
-        {
-            if(laughTimer.getTime() >= 10000)
-            {
+        if(alive) {
+            if(laughTimer.getTime() >= 10000) {
                 laughTimer.stop();
                 laughing.play(laugh);
                 laughTimer.start();
             }
-            if(zombieTimer.getTime() >= 2000)
-            {
+            if(zombieTimer.getTime() >= 2000) {
                 zombieTimer.stop();
                 FastSmallZombie zomb = new FastSmallZombie(level, x, y, player,6-health/20);
                 level.addEntity(zomb);
@@ -189,8 +158,7 @@ public class FinalBoss extends Zombie
                 zombieTimer.start();
             }
             int bulletDelay = 3000 - 25*(100 - health);
-            if(bulletTimer.getTime() >= bulletDelay)
-            {
+            if(bulletTimer.getTime() >= bulletDelay) {
                 bulletTimer.stop();
                 cannonShot1.play(cannon);
                 level.addBullet(new ZombieBossBullet(level, (int)(this.x+width()/2), (int)(this.y + height()/2), player.getOnScreenX(), 

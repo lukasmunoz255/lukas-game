@@ -8,7 +8,7 @@ package Graphics;
 public final class Font {
     public static boolean ok = true;
     private static final String legalCharacters = // contains all the characters that can be rendered
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ      " + 
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ[]    " + 
         "0123456789.,:;'\"!?$%()-=+/_     "; 
 
     /**

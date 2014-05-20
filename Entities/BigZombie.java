@@ -34,19 +34,13 @@ public class BigZombie extends Zombie {
         Game.kills += 3;
     }
 
-    public int getXTile() { // Todo -- Format this
-        if(!alive)
-            return 15;
-        else if(health <= maxHealth*1/5)
-            return 12;
-        else if(health <= maxHealth*2/5)
-            return 9;
-        else if(health <= maxHealth*3/5)
-            return 6;
-        else if(health <= maxHealth*4/5)
-            return 3;
-        else
-            return 0;
+    public int getXTile() {
+        if(!alive)                       { return 15; }
+        else if(health <= maxHealth*1/5) { return 12; }
+        else if(health <= maxHealth*2/5) { return 9;  }
+        else if(health <= maxHealth*3/5) { return 6;  }
+        else if(health <= maxHealth*4/5) { return 3;  }
+        else                             { return 0;  }
     }
 
     public int getYTile() { return 22; }

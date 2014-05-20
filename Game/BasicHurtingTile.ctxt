@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.params=id\ x\ y\ tileColor\ levelColor
 comment0.target=BasicHurtingTile(int,\ int,\ int,\ int,\ int)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ BasicHurtingTile\r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ BasicHurtingTile\n
 numComments=1

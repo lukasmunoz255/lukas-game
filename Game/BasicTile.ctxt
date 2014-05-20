@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=id\ x\ y\ tileColor\ levelColor
 comment0.target=BasicTile(int,\ int,\ int,\ int,\ int)
-comment0.text=\r\n\ Constructor\ for\ BasicTile.\ Sets\ everything\ correctly.\ \r\n
+comment0.text=\n\ Constructor\ for\ BasicTile.\ Sets\ everything\ correctly.\ \n
 comment1.params=screen\ level\ x\ y
 comment1.target=void\ render(Graphics.Screen,\ Level,\ int,\ int)
-comment1.text=\r\n\ Just\ calls\ the\ render\ method\ from\ screen.\ Renders\ the\ correct\ tile\r\n\ (using\ tileID)\ on\ the\ screem\ at\ the\ correct\ location.\r\n
+comment1.text=\n\ Just\ calls\ the\ render\ method\ from\ screen.\ Renders\ the\ correct\ tile\n\ (using\ tileID)\ on\ the\ screem\ at\ the\ correct\ location.\n
 numComments=2

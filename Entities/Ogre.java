@@ -12,13 +12,11 @@ import java.io.IOException;
 import java.io.File;
 
 /**
- * Write a description of class Ogre here.
+ * The class for Ogres.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lukas Muñoz, Luke Staunton, JCL
  */
-public class Ogre extends BigZombie
-{
+public class Ogre extends BigZombie {
     
     
     /**
@@ -36,20 +34,11 @@ public class Ogre extends BigZombie
         this.yMax = 28; //Bottom
     }
     
-    public void increaseKills()
-    {
-        Game.kills += 5;
-    }
+    public void increaseKills() { Game.kills += 5; }
     
-    public int getYTile()
-    {
-        if(health <= 3)
-            return 18;
-        return 15;
-    }
+    public int getYTile() { return ((health <= 3) ? (18) : (15)); }
     
-    public int getXTile()
-    {
+    public int getXTile() {
         if(!alive)
             return 27;
         else if(health <= maxHealth*1/11)
