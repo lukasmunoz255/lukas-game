@@ -12,21 +12,16 @@ import java.io.IOException;
 import java.io.File;
 
 /**
- * Write a description of class FastSmallZombie here.
+ * The class for Fast-Small Zombies
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lukas Muñoz, Luke Staunton, JCL
  */
 public class FastSmallZombie extends Zombie
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
     /**
      * Constructor for objects of class FastSmallZombie
      */
-    public FastSmallZombie(Level level, int x, int y, Player mainPlayer, int worldNumber)
-    {
+    public FastSmallZombie(Level level, int x, int y, Player mainPlayer, int worldNumber) {
         super(level, x, y, mainPlayer, worldNumber);
         this.speed = 4 + worldNumber/5;
         this.maxHealth = (short)worldNumber;
@@ -35,9 +30,7 @@ public class FastSmallZombie extends Zombie
     
     public int getXTile()
     {
-        if(!alive)
-            return 2;
-        return 4;
+        return ((alive) ? (4) : (2));
     }
     
     public void increaseKills()

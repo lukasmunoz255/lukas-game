@@ -55,7 +55,7 @@ public final class Debugger {
      * Renders the debugger on the Screen 'screen.
      */
     public static final void render(final Graphics.Screen screen) {
-        Graphics.Font.render("GAME DEBUGGER (Version Alpha)", screen, screen.xOffset, screen.yOffset, Graphics.Colors.get(0, 0, 0, 555), 1);
+        Graphics.Font.render(String.format("GAME DEBUGGER :: CP=%d :: CT=%d", clearPeriod, clearTimer), screen, screen.xOffset, screen.yOffset, Graphics.Colors.get(0, 0, 0, 555), 1);
         for (int rowIter = 0; rowIter != grid.length; ++rowIter) {
             String currentLine = "";
             for (int colIter = 0; colIter != grid[rowIter].length; ++colIter) {

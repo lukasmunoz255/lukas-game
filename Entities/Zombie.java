@@ -3,6 +3,8 @@ package Entities;
 import Game.Level;
 import Game.Game;
 import Game.InputHandler;
+import Game.Debugger;
+
 import Graphics.Screen;
 import Graphics.Colors;
 
@@ -18,27 +20,27 @@ import java.io.IOException;
 import java.io.File;
 
 /**
- * Write a description of class Zombie here.
+ * The superclass of all zombies.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lukas Muñoz, Luke Staunton, JCL
  */
 public class Zombie extends Player
 {
     protected Player mainPlayer;
-    protected int color;
-    protected int color1;
-    protected int color2;
-    protected int color3;
-    protected int movingX;
-    protected int movingY;
-    protected boolean atWallX = false;
-    protected boolean atWallY = false;
-    protected boolean first = true;
-    protected int movingAroundWallXDirection;
-    protected int movingAroundWallYDirection;
+    protected int color,
+    color1,
+    color2,
+    color3,
+    movingX,
+    movingY,
+    movingAroundWallXDirection,
+    movingAroundWallYDirection,
+    maxHealth;
+
+    protected boolean atWallX = false,
+    atWallY = false,
+    first = true;
     protected boolean alive;
-    protected int maxHealth;
     protected WavePlayer owSound;
     protected WaveFile owFile;
 
@@ -53,88 +55,47 @@ public class Zombie extends Player
         this.maxHealth = (short)(2 * worldNumber);
         this.color = getColorOnWorld(worldNumber);
 
-        
         xMin = 1; //Left 0
         xMax = 8; //Right 4
         yMin = 0; //Top 0
         yMax = 12; //Bottom 5 
 
         owSound = new WavePlayer();
-        try
-        {
-            owFile = new WaveFile(path2 + "Sound/zombiehit.wav");
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
+        try { owFile = new WaveFile(path2 + "Sound/zombiehit.wav"); }
+        catch(Exception e) { e.printStackTrace(); }
     }
 
     protected int getColorOnWorld(int worldNumber)
     {
-        if(worldNumber == 1)
-        {
-            color1 = 210;
-            color2 = 151;
-            color3 = 500;
-        }
-        else if(worldNumber == 2)
-        {
-            color1 = 221;
-            color2 = 342;
-            color3 = 500;
-        }
-        else if(worldNumber == 3)
-        {
-            color1 = 121;
-            color2 = 355;
-            color3 = 510;
-        }
-        else if(worldNumber == 4)
-        {
-            color1 = 111;
-            color2 = 412;
-            color3 = 511;
-        }
-        else
-        {
-            color1 = 221;
-            color2 = 555;
-            color3 = 500;
-        }
-        return Colors.get(-1, color1, color2, color3);
+        final int colors[][] = {
+                {221, 555, 500},
+                {210, 151, 500},
+                {221, 342, 500},
+                {121, 355, 510},
+                {111, 412, 511}};
+        int colorSet[] = null;
+        final int DEFAULT = 0;
+
+        if (worldNumber >= 1 && worldNumber <= 4)   { colorSet = colors[worldNumber]; }
+        else                                        { colorSet = colors[DEFAULT];     }
+
+        return Colors.get(-1, colorSet[0], colorSet[1], colorSet[2]);
     }
 
-    public boolean isAlive()
-    {
-        return alive;
-    }
+    public boolean isAlive() { return alive; }
 
-    public void tick()
-    {
+    public void tick() {
         top();
         bottom();
-        int deltaX;
-        int deltaY;
-        if(top < 0)
-            deltaY = -1;
-        else
-            deltaY = 1;
-        if(bottom < 0)
-            deltaX = -1;
-        else
-            deltaX = 1;
+        int deltaX = ((bottom < 0) ? (-1) : (1)),
+        deltaY = ((top < 0) ? (-1) : (1));
         move(deltaX, deltaY);
     }
 
-    public int getXTile()
-    {
-        if(!alive)
-            return 2;
-        else if(health <= maxHealth/2)
-            return 4;
-        else
-            return 0;
+    public int getXTile() {
+        if(!alive) { return 2; }
+        else if(health <= maxHealth/2) { return 4; }
+        else { return 0; }
     }
 
     public int getYTile()
@@ -142,23 +103,20 @@ public class Zombie extends Player
         return 25;
     }
 
-    public void top()
-    {
+    public void top() {
         top = mainPlayer.y + mainPlayer.height()/2 - (y + height()/2);
     }
 
-    public void bottom()
-    {
+    public void bottom() {
         bottom = mainPlayer.x + mainPlayer.width()/2 - 2 - (x + width()/2);
     }
 
-    public void render(Screen screen, Graphics g)
-    {
+    public void render(Screen screen, Graphics g) {
         xTile = getXTile();
         yTile = getYTile();
-        int modifier = (int)(8 * scale);  
-        int xOffset = x - modifier / 2;  
-        int yOffset = y - modifier / 4 - 4;  
+        int modifier = (int)(8 * scale),
+        xOffset = x - modifier / 2, 
+        yOffset = y - modifier / 4 - 4;  
 
         screen.render(xOffset , yOffset, xTile + yTile * 32, color, 0, scale);                       //Upper  
         screen.render(xOffset + modifier , yOffset, (xTile + 1) + yTile * 32, color, 0, scale);      //Body  
@@ -166,17 +124,16 @@ public class Zombie extends Player
         screen.render(xOffset + modifier , yOffset + modifier, (xTile + 1) + (yTile + 1) * 32, color, 0, scale); 
     }
 
-    public void increaseKills()
-    {
+    public void increaseKills() {
         Game.kills++;
     }
 
-    public void move(int xa, int ya)
-    {
+    public void move(int xa, int ya) {
         if(health <= 0)
         {
             if(first)
             {
+                Debugger.sendMsg(String.format("Killed %s", getClass().getSimpleName()));
                 owSound.play(owFile);
                 increaseKills();
                 first = false;

@@ -105,7 +105,7 @@ public class InputHandler implements KeyListener, MouseListener, MouseMotionList
         } else if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) { // clears the debugger
             Debugger.clear();
         } else if (e.getKeyCode() == KeyEvent.VK_BACK_QUOTE) { // toggles auto refresh
-            if (Debugger.clearPeriod == -1) { Debugger.clearPeriod = 4000; }
+            if (Debugger.clearPeriod == -1) { Debugger.clearPeriod = 3000; Debugger.clearTimer = Debugger.clearPeriod; }
             else { Debugger.clearPeriod = -1; }
         }
         if(screenType == 1)
