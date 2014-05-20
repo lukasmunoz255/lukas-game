@@ -34,7 +34,7 @@ public abstract class Stage
     
     public void renderTiles(Screen scrn, int xOff, int yOff)
     {
-        level.renderTiles(scrn, xOff, yOff);
+        if (level != null) { level.renderTiles(scrn, xOff, yOff); }
     }
     
     public abstract void renderEntities(Screen screen, Graphics g);

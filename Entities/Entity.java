@@ -16,9 +16,6 @@ public abstract class Entity{
 
     public Entity(Level level) {
         init(level);
-        if (!(this instanceof Bullet)) {
-            Debugger.sendMsg(String.format("Created (%s)", this));
-        }
     }
 
     public final void init(Level level) { this.level = level; }

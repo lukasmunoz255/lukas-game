@@ -69,6 +69,7 @@ public class Game extends Canvas implements Runnable
     public InstructionsScreen instructionsScreen;
     public PauseScreen pauseScreen;
     public WaitingScreen waitingScreen;
+    public SplashScreen splashScreen;
 
     public static int kills;
     public static int score;
@@ -130,13 +131,14 @@ public class Game extends Canvas implements Runnable
         instructionsScreen = new InstructionsScreen(otherLevel, this, input, soundPlayer);
         pauseScreen = new PauseScreen(this, input);
         waitingScreen = new WaitingScreen(otherLevel, this);
+        splashScreen = new SplashScreen(this);
 
         player = gameScreen.getPlayer();
 
         input.setScreens(homeScreen, losingScreen, highScoresScreen);
         input.setScreenType(0);
         file1 = new File(path2 + "Scores.txt");
-        currentStage = homeScreen;
+        currentStage = splashScreen;
         
         
     }
@@ -301,7 +303,7 @@ public class Game extends Canvas implements Runnable
 
     public void resetHighScores()
     {
-        Debugger.sendMsg("resseting high scores!");
+        Debugger.sendMsg("resetting high scores!");
         try
         {
             String str = ". aaa 0";

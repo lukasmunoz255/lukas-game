@@ -21,6 +21,7 @@ public class HomeScreen extends Stage
     private Button instructionsButton;
     private ComputerPlayer player;
     private Zombie zombie;
+    private java.awt.image.BufferedImage backgroundImage;
 
     /**
      * Constructor for objects of class HomeScreen
@@ -32,6 +33,9 @@ public class HomeScreen extends Stage
         highScoresButton = new Button(200, 50, buttonColor, fontColor, "high scores", input);
         instructionsButton = new Button(125, 150, buttonColor, fontColor, "instructions", input);
         COOPButton = new Button(125, 250, buttonColor, fontColor, "CO-op", input);
+        try {
+            backgroundImage = javax.imageio.ImageIO.read(new java.io.File("Images/mmBackground.png"));
+        } catch (Exception e) { e.printStackTrace(); }
         //this.player = new ComputerPlayer(this.level, screen.width/4, screen.height*3/4, screen);
         //this.zombie = new Zombie(this.level, screen.width/4, screen.height*3/4+15, this.player, 1);
         //this.player.setZombie(zombie);
@@ -47,7 +51,6 @@ public class HomeScreen extends Stage
         highScoresButton.render(screen);
         instructionsButton.render(screen);
         COOPButton.render(screen);
-        //level.renderEntities(screen, g);
     }
 
     public void clicked(InputHandler input)

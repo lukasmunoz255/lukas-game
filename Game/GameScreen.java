@@ -207,6 +207,7 @@ public class GameScreen extends Stage
                         time.start();
                     if(time.getTime() > 5000)
                     {
+                        Debugger.sendMsg("(---- INCREASING LEVEL ----)");
                         time.stop();
                         newStage(worlds[worldNumber-1], difficulty + 1);
                     }
@@ -244,6 +245,7 @@ public class GameScreen extends Stage
 
     private void increaseWorld()
     {
+        
         //player.shot1.close();
         //player.shot2.close();
         if(worldNumber == 5)
@@ -260,6 +262,7 @@ public class GameScreen extends Stage
             }
             if(time.getTime() > 5000)
             {
+                Debugger.sendMsg("(---- INCREASING WORLD ----)");
                 time.stop();
                 setUpNewWorld();
                 for(int i = 0; i < players.size(); i++)

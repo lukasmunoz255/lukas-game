@@ -42,7 +42,13 @@ public final class Debugger {
             }
         }
         // write the message
+        for (int rowIter = grid.length - rowsOccupied; rowIter < grid.length; ++rowIter) {
+            for (int colIter = 0; colIter < grid[rowIter].length; ++colIter) {
+                grid[rowIter][colIter] = '\0';
+            }
+        }
         output(messageToPrint, grid.length-rowsOccupied, 0);  
+        clearTimer = clearPeriod;
     }
 
     /**
