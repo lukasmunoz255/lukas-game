@@ -24,7 +24,7 @@ public class GameClient extends Thread
     private InetAddress ipAddress;
     private DatagramSocket socket;
     private Game game;
-
+    //FSDHJKSDLKFJSHL
     public GameClient(Game game, String ipAddress)
     {
         this.game = game;
