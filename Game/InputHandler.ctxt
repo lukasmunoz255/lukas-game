@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.params=game\ level
-comment0.target=InputHandler(game.Game,\ Level)
+comment0.target=InputHandler(Game,\ Level)
 comment0.text=\r\n\ Sets\ up\ an\ inputHandler.\ Passes\ in\ a\ level\ so\ bullets\ can\ be\ \r\n\ created\ in\ the\ game\r\n
 comment1.params=homeScreen\ losingScreen\ highScoresScreen
-comment1.target=void\ setScreens(HomeScreen,\ game.LosingScreen,\ game.HighScoresScreen)
+comment1.target=void\ setScreens(HomeScreen,\ LosingScreen,\ HighScoresScreen)
 comment10.params=e
 comment10.target=void\ keyTyped(java.awt.event.KeyEvent)
 comment11.params=keyCode\ isPressed

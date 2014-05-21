@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=level\ game\ soundPlayer
-comment0.target=Stage(Level,\ game.Game,\ Sound.WavePlayer)
+comment0.target=Stage(Level,\ Game,\ Sound.WavePlayer)
 comment1.params=
 comment1.target=void\ tick()
 comment2.params=scrn\ xOff\ yOff

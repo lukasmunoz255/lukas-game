@@ -15,14 +15,20 @@ public final class Debugger {
      * Outputs the string 'msg begining at the location ('row, 'col). This is only used for
      * debugging. Please do not use.
      */
-    private static final void output(final String msg, final int row, final int col) {
+    private static final void output(final String msg, final int row, final int col) 
+    {
         int rowIter = row, colIter = col, charIter = 0;
-        while (rowIter < grid.length) {
-            while (colIter < grid[row].length) {
+        while (rowIter < grid.length) 
+        {
+            while (colIter < grid[row].length)
+            {
                 grid[rowIter][colIter] = msg.charAt(charIter);
                 ++charIter;
                 ++colIter;
-                if (charIter >= msg.length()) { return; }
+                if (charIter >= msg.length()) 
+                { 
+                    return; 
+                }
             }
             colIter = 0;
             ++rowIter;

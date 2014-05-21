@@ -32,14 +32,15 @@ public class SpawnPoint
         this.y = y;
         spawned = false;
     }
-    
+
     public void spawn(ArrayList<Zombie> zombies, List<Entity> entities, Level level, Screen screen, Player player, int zombie, int worldNumber)
     {
         Zombie zomb = null;
-        
+
         if(zombie == 0)
         {
             zomb = new Zombie(level, x, y, player, worldNumber);
+            //zomb = new FinalBoss(level, x, y, screen, player, zombies);
         }
         else if(zombie == 1)
             zomb = new FastSmallZombie(level, x, y, player, worldNumber);
@@ -54,12 +55,12 @@ public class SpawnPoint
         spawned = true;
         Debugger.sendMsg(String.format("Spawned %s at (%d, %d)", zomb.getClass().getSimpleName(), zomb.x, zomb.y));
     }
-    
+
     public boolean isFull()
     {
         return spawned;
     }
-    
+
     public void reset()
     {
         spawned = false;

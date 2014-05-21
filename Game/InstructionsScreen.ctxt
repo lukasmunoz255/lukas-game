@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=level\ game\ input\ soundPlayer
-comment0.target=InstructionsScreen(Level,\ game.Game,\ InputHandler,\ Sound.WavePlayer)
+comment0.target=InstructionsScreen(Level,\ Game,\ InputHandler,\ Sound.WavePlayer)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ InstructionsScreen\r\n
 comment1.params=screen\ g
 comment1.target=void\ renderEntities(Graphics.Screen,\ java.awt.Graphics)
