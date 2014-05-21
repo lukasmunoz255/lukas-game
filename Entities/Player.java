@@ -251,7 +251,7 @@ public abstract class Player extends Mob
         }
         if(decrements != 0)
         {
-            //health-=decrements;
+            health-=decrements;
             if(!nomTimer.isRunning())
             {
                 nomTimer.start();

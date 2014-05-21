@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=game\ input
-comment0.target=PauseScreen(Game,\ InputHandler)
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ PauseScreen\n
+comment0.target=PauseScreen(game.Game,\ InputHandler)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PauseScreen\r\n
 comment1.params=level
 comment1.target=void\ setLevel(Level)
 comment2.params=screen\ g

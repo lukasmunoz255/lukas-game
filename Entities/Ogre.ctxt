@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=level\ x\ y\ mainPlayer\ worldNumber
 comment0.target=Ogre(Game.Level,\ int,\ int,\ Player,\ int)
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Ogre\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Ogre\r\n
 comment1.params=
 comment1.target=void\ increaseKills()
 comment2.params=

@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=level\ x\ y\ screen
 comment0.target=ComputerPlayer(Game.Level,\ int,\ int,\ Graphics.Screen)
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ ComputerPlayer\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ ComputerPlayer\r\n
 comment1.params=zomb
 comment1.target=void\ setZombie(Zombie)
 comment2.params=

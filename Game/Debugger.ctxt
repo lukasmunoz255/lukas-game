@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.params=msg\ row\ col
 comment0.target=void\ output(java.lang.String,\ int,\ int)
-comment0.text=\n\ Outputs\ the\ string\ 'msg\ begining\ at\ the\ location\ ('row,\ 'col).\ This\ is\ only\ used\ for\n\ debugging.\ Please\ do\ not\ use.\n
+comment0.text=\r\n\ Outputs\ the\ string\ 'msg\ begining\ at\ the\ location\ ('row,\ 'col).\ This\ is\ only\ used\ for\r\n\ debugging.\ Please\ do\ not\ use.\r\n
 comment1.params=message
 comment1.target=void\ sendMsg(java.lang.String)
-comment1.text=\n\ Sends\ a\ message\ 'message\ to\ the\ debugger\ to\ be\ written\ on\ the\ debugger\ display.\n
+comment1.text=\r\n\ Sends\ a\ message\ 'message\ to\ the\ debugger\ to\ be\ written\ on\ the\ debugger\ display.\r\n
 comment2.params=screen
 comment2.target=void\ render(Graphics.Screen)
-comment2.text=\n\ Renders\ the\ debugger\ on\ the\ Screen\ 'screen.\n
+comment2.text=\r\n\ Renders\ the\ debugger\ on\ the\ Screen\ 'screen.\r\n
 comment3.params=
 comment3.target=void\ clear()
 comment4.params=timeElapsedMillis

@@ -1,19 +1,19 @@
 #BlueJ class context
 comment0.params=id\ isSolid\ isEmitter\ levelColor
 comment0.target=Tile(int,\ boolean,\ boolean,\ int)
-comment0.text=\n\ Constructor\ for\ any\ tile.\ It\ all\ comes\ back\ to\ here,\ this\ sets\ up\ the\ basics\n\ of\ a\ tile.\n
+comment0.text=\r\n\ Constructor\ for\ any\ tile.\ It\ all\ comes\ back\ to\ here,\ this\ sets\ up\ the\ basics\r\n\ of\ a\ tile.\r\n
 comment1.params=
 comment1.target=boolean\ isSolid()
-comment1.text=\n\ Returns\ true\ if\ a\ tile\ is\ solid\n
+comment1.text=\r\n\ Returns\ true\ if\ a\ tile\ is\ solid\r\n
 comment2.params=
 comment2.target=boolean\ isEmitter()
-comment2.text=\n\ Returns\ true\ is\ a\ tile\ is\ an\ emitter\n
+comment2.text=\r\n\ Returns\ true\ is\ a\ tile\ is\ an\ emitter\r\n
 comment3.params=
 comment3.target=byte\ getId()
-comment3.text=\n\ Returns\ the\ ID\ of\ a\ tile.\n
+comment3.text=\r\n\ Returns\ the\ ID\ of\ a\ tile.\r\n
 comment4.params=
 comment4.target=int\ getLevelColor()
-comment4.text=\n\ Returns\ the\ levelColor\ of\ a\ tile.\n
+comment4.text=\r\n\ Returns\ the\ levelColor\ of\ a\ tile.\r\n
 comment5.params=
 comment5.target=boolean\ isHurting()
 comment6.params=screen\ level\ x\ y
